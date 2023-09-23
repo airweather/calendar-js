@@ -8,10 +8,65 @@
 </head>
 <body>
   <div id="app"></div>
+  
   <script>
     const app = document.querySelector("#app");
+    app.innerHTML = `
+      <div>
+        <span>calendar</span>
+      </div>
+        `;
 
+    const render = (html) => {
+      app.innerHTML = html
+    }
+
+    
+    const getDate = () => {
+
+      const data = new Date()
+
+      const year = data.getFullYear();
+      const month = data.getMonth() + 1;
+      const date = data.getDate();
+      const day = data.getDay();
+
+      return {
+        year,
+        month,
+        date,
+        day
+      }
+    }
+
+    const date = getDate();
+    
+    const calendarLoad = () => {
+
+      const arr = Array.from({length:42}, (_, i)=> {
+        return `
+          <div class="calendar">
+            ${i}
+          </div>
+        `
+      })
+
+      
+      console.log(arr.join(' '))
+      render(`<div class="calendar-container">${arr.join(' ')}</div>`)
+
+    }
+    
+    calendarLoad()
+    
 
   </script>
+
+  <style>
+    .calendar-container{
+    display: grid;
+    }
+ </style>
+ 
 </body>
 </html>
