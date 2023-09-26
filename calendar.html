@@ -22,9 +22,9 @@
     }
 
     
-    const getDate = () => {
+    const getDate = (timeStampMs) => {
 
-      const data = new Date()
+      const data = new Date(timeStampMs)
 
       const year = data.getFullYear();
       const month = data.getMonth() + 1;
