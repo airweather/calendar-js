@@ -39,12 +39,20 @@
       }
     }
 
-    const lastMonth = () => {
+    const lastMonth = (timeStampMs) => {
+      const current = new Date(timeStampMs)
 
+      return new Date(
+        current.getFullYear(), current.getMonth() - 1, 1
+      ).getTime()
     }
 
-    const nextMonth = () => {
-      
+    const nextMonth = (timeStampMs) => {
+      const current = new Date(timeStampMs)
+
+      return new Date(
+        current.getFullYear(), current.getMonth() + 1, 1
+      ).getTime()
     }
 
     const today = getDate().getTime();
