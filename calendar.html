@@ -11,7 +11,15 @@
   
   <script>
     const app = document.querySelector("#app");
+    const today = new Date();
+
+    const calendarHeader = `
+      <div>
+        <h3>${today.getFullYear()}년 ${today.getMonth() + 1}월</h3>
+
+      `
     app.innerHTML = `
+      ${calendarHeader}
       <div>
         <span>calendar</span>
       </div>
@@ -22,22 +30,22 @@
     }
 
     
-    const getDate = (timeStampMs) => {
+    // const getDate = (timeStampMs) => {
 
-      const data = new Date(timeStampMs)
+    //   const data = new Date(timeStampMs)
 
-      const year = data.getFullYear();
-      const month = data.getMonth() + 1;
-      const date = data.getDate();
-      const day = data.getDay();
+    //   const year = data.getFullYear();
+    //   const month = data.getMonth() + 1;
+    //   const date = data.getDate();
+    //   const day = data.getDay();
 
-      return {
-        year,
-        month,
-        date,
-        day
-      }
-    }
+    //   return {
+    //     year,
+    //     month,
+    //     date,
+    //     day
+    //   }
+    // }
 
     const lastMonth = (timeStampMs) => {
       const current = new Date(timeStampMs)
@@ -55,12 +63,12 @@
       ).getTime()
     }
 
-    // const today = getDate().getTime();
 
     const calendarLoad = (dateData = new Date()) => {
 
       const arr = Array.from({length:42}, (_, i)=> {
         return `
+          ${calendarHeader}
           <div class="calendar">
             ${i}
           </div>
