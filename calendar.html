@@ -55,7 +55,7 @@
       ).getTime()
     }
 
-    const today = getDate().getTime();
+    // const today = getDate().getTime();
 
     const calendarLoad = (dateData = new Date()) => {
 
@@ -80,7 +80,8 @@
 
   <style>
     .calendar-container{
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr)
     }
 
     .calendar{
