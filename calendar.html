@@ -15,17 +15,13 @@
 
     const calendarHeader = `
       <div>
-        <h3>${today.getFullYear()}년 ${today.getMonth() + 1}월</h3>
-
-      `;
-      
-    app.innerHTML = `
-      ${calendarHeader}
-      <div>
         <span>calendar</span>
       </div>
+      <div>
+        <h3>${today.getFullYear()}년 ${today.getMonth() + 1}월</h3>
+      </div>
         `;
-
+      
     const render = (html) => {
       app.innerHTML = html
     }
@@ -67,9 +63,9 @@
 
     const calendarLoad = (dateData = new Date()) => {
 
+      // ${calendarHeader}
       const arr = Array.from({length:42}, (_, i)=> {
         return `
-          ${calendarHeader}
           <div class="calendar">
             ${i}
           </div>
@@ -78,7 +74,10 @@
 
       
       console.log(arr.join(' '))
-      render(`<div class="calendar-container">${arr.join(' ')}</div>`)
+      render(`
+        ${calendarHeader}
+        <div class="calendar-container">${arr.join(' ')}</div>
+      `)
 
     }
     
