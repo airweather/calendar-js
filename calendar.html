@@ -21,6 +21,16 @@
         <h3>${today.getFullYear()}년 ${today.getMonth() + 1}월</h3>
       </div>
         `;
+
+    const day = ['일', '월', '화', '수', '목', '금', '토']
+
+    const dayHeader = day.map((item) => {
+      return (
+        `<div class='calendar'>
+          <span>${item}</span>
+        <div>`
+          )
+      })
       
     const render = (html) => {
       app.innerHTML = html
@@ -76,6 +86,7 @@
       console.log(arr.join(' '))
       render(`
         ${calendarHeader}
+        ${dayHeader}
         <div class="calendar-container">${arr.join(' ')}</div>
       `)
 
