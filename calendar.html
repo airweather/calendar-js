@@ -25,10 +25,10 @@
     const day = ['일', '월', '화', '수', '목', '금', '토']
 
     const dayHeader = day.map((item) => {
-      return ( `<div class='calendar'>${item}<div>` )
+      return ( `<div class='calendar'>${item}</div>` )
       })
     
-    console.log(dayHeader)
+    console.log(dayHeader.join(' '))
       
     const render = (html) => {
       app.innerHTML = html
@@ -90,7 +90,6 @@
 
     }
     
-    console.log(dayHeader.join(' '))
     calendarLoad()
     
 
