@@ -24,8 +24,19 @@
 
     const day = ['일', '월', '화', '수', '목', '금', '토']
 
-    const dayHeader = day.map((item) => {
-      return ( `<div class='calendar'>${item}</div>` )
+    const dayHeader = day.map((item, i) => {
+      let className = 'calendar'
+
+      if(i === 0) {
+        className += ' sun'
+      }
+      
+      if(i === 6) {
+        className += ' sat'
+      }
+      
+
+      return ( `<div class='${className}'>${item}</div>` )
       })
     
     const render = (html) => {
@@ -104,6 +115,16 @@
       width: 50px;
       height: 50px;
     }
+
+    .sun{
+      color:#f00;
+    }
+
+    .sat{
+      color:#00f;
+    }
+
+
  </style>
  
 </body>
